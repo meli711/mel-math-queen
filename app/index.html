@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Queen Game Setup</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- Centered image above the container -->
+<img src="./images/krone.png" alt="Krone" class="centered-image"/>
+
+<div class="container">
+    <h1>Math Queen Game Setup</h1>
+    <form action="game.html" method="GET">
+        <!-- Dropdown for "aufgabe" -->
+        <select name="aufgabe" id="aufgabe">
+            <option value="0">Quiz 1</option>
+            <option value="10">Quiz 2</option>
+            <option value="20">Quiz 3</option>
+            <option value="30">Quiz 4</option>
+            <option value="40">Quiz 5</option>
+        </select>
+        <input type="hidden" name="player1" value="0">
+
+        <div class="player-selection">
+            <label>
+                <input type="checkbox" name="player1.dummy" value="0" checked disabled> Player 1 (Mouse)
+            </label>
+            <label>
+                <input type="checkbox" name="player2" value="0"> Player 2 (wesd keys=>top left to bottom right)
+            </label>
+            <label>
+                <input type="checkbox" name="player3" value="0"> Player 3 (iokl keys=>top left to bottom right)
+            </label>
+        </div>
+
+        <div class="mode-options">
+            <label>
+                <input type="radio" name="mode" value="0" checked> Cooperative
+            </label>
+            <label>
+                <input type="radio" name="mode" value="1"> Fight
+            </label>
+        </div>
+
+        <button type="submit" class="start-button">Start Game</button>
+    </form>
+</div>
+
+</body>
+</html>

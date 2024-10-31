@@ -1,0 +1,20 @@
+graph TD
+    A[Start Game] --> B[Select Quiz, Players, Mode]
+    B --> C{Valid Parameters?}
+    C -- Yes --> D[Initialize Game]
+    C -- No --> E[Default to 1 Player, Cooperative, Quiz 1]
+    D --> F[Display Question]
+    F --> G[Player Answers]
+    G --> H{Correct Answer?}
+    H -- Yes --> I[Increment Score]
+    I --> J{10 Questions Answered?}
+    J -- Yes --> K[Display Results]
+    J -- No --> F
+    H -- No --> L[Decrement Score]
+    L --> F
+    K --> M{Cooperative or Fight?}
+    M -- Cooperative --> N[Sum Scores]
+    M -- Fight --> O[Determine Winner]
+    N --> P[Show Final Results]
+    O --> P
+    P --> Q[End Game]

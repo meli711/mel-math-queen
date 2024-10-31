@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "app/bin",
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "resolveJsonModule": true,
+    "lib": ["es5", "es6","DOM"]
+  },
+  "exclude": [
+    "node_modules",
+    "public",
+    "vendor",
+    "app/jsons/**/*"
+  ]
+}

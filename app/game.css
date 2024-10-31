@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    font-size: 3em;
+    font-weight: bold;
+    color: gold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.centered-image {
+    text-align: center; /* Center-aligns the image inside the <p> */
+}
+
+.centered-image img {
+    width: 100px; /* Sets image width */
+    height: 100px; /* Sets image height */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.top {
+    flex: 1;
+    background: linear-gradient(135deg, #ffd700 0%, #c0c0c0 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.bottom {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0e6d2;
+}
+
+.bottom .box {
+    flex: 1 1 50%;
+    border: 1px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.neutral {
+    background-color: #f3e9dc;
+}
+
+.success {
+    background-color: green;
+}
+
+.failure {
+    background-color: red;
+}
+
+.ignore {
+    background-color: yellow;
+}
+
+/* Overlay Results Panel */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(4px); /* Slight blur for a softer effect */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal styling */
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/* Modal header and text styling */
+.modal h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal p {
+    color: #555;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+/* Close button styling */
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+/* Animation for smooth appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.player-result {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+}
+
+.rCrownPlayer1 {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+.rCrownPlayer2 {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+.rCrownPlayer3 {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+/* Additional mobile-friendly adjustments */
+@media (max-width: 600px) {
+    .modal {
+        padding: 1.5rem;
+    }
+}

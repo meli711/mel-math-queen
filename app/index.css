@@ -1,0 +1,82 @@
+/* Basic styling for layout */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+/* Centered image styling */
+.centered-image {
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+.container {
+    background: radial-gradient(circle at top, #c0c0c0 0%, #ffd700 100%);
+
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.container h1 {
+    text-align: center;
+    color: #333;
+}
+
+.player-selection {
+    margin-top: 15px;
+}
+
+.player-selection label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    text-align: left;
+}
+
+.mode-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    color: #333;
+}
+
+.start-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #c0c0c0;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #b3b3b3;
+}
+
+#aufgabe {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}

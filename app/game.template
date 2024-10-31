@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800">
+    <meta http-equiv="Cache-Control" content="public" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Math Queen</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body onkeydown="EntryPoint.onKeyDown(event)">
+
+<h1 id="title">Math Queen</h1>
+<div class="centered-image">
+    <img src="./images/krone.png" alt="Krone"/>
+</div>
+<script>
+    window.onload = function () {
+        EntryPoint.onLoad();
+    };
+</script>
+
+<div class="container">
+  <div class="top"> <p id="rAufgabe"></p></div>
+  <div class="bottom">
+    <div class="box neutral" onclick="EntryPoint.onLoesungClick(0)" id="rLoesung0"></div>
+    <div class="box neutral" onclick="EntryPoint.onLoesungClick(1)" id="rLoesung1"></div>
+    <div class="box neutral" onclick="EntryPoint.onLoesungClick(2)" id="rLoesung2"></div>
+    <div class="box neutral" onclick="EntryPoint.onLoesungClick(3)" id="rLoesung3"></div>
+  </div>
+</div>
+<!-- Modal Overlay -->
+<div id="overlay" class="overlay">
+    <div class="modal">
+        <span class="close-button" onclick="EntryPoint.closeResults()">&times;</span>
+        <h2>Resultate</h2>
+        <div class="player-result"><p id="rPlayer1"></p><img class="rCrownPlayer1" id="rCrownPlayer1" src="./images/krone.png" alt="Krone"/></div>
+        <div class="player-result"><p id="rPlayer2"></p><img class="rCrownPlayer2" id="rCrownPlayer2" src="./images/krone.png" alt="Krone"/></div>
+        <div class="player-result"><p id="rPlayer3"></p><img class="rCrownPlayer3" id="rCrownPlayer3" src="./images/krone.png" alt="Krone"/></div>
+    </div>
+</div>
+
+</body>
+</html>
