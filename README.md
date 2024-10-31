@@ -59,6 +59,29 @@ Spiellogik:
 * Die Auswertung unterscheidet zwischen kooperativ und fight. Ein Spieler und Mehrspieler
 * Wenn die Auswertung geschlossen wird, gelangt man automatisch zum Spielstart.
 
+```mermaid
+graph TD
+    A[Start Game] --> B[Select Quiz, Players, Mode]
+    B --> C{Valid Parameters?}
+    C -- Yes --> D[Initialize Game]
+    C -- No --> E[Default to 1 Player, Cooperative, Quiz 1]
+    D --> F[Display Question]
+    F --> G[Player Answers]
+    G --> H{Correct Answer?}
+    H -- Yes --> I[Increment Score]
+    I --> J{10 Questions Answered?}
+    J -- Yes --> K[Display Results]
+    J -- No --> F
+    H -- No --> L[Decrement Score]
+    L --> F
+    K --> M{Cooperative or Fight?}
+    M -- Cooperative --> N[Sum Scores]
+    M -- Fight --> O[Determine Winner]
+    N --> P[Show Final Results]
+    O --> P
+    P --> Q[End Game]
+```
+
 Beispiele:
 * index.html, in einem Formular werden die Parameter ausgewählt. Parameter sind: player1, player2,player3, modus(0=kooperativ, 1=fight), und die Aufgabennummer (Quiz1=0,Quiz2=10,Quiz3=20,Quiz4=30). Ein Quiz beinhaltet 10 Fragen. player1 ist obligatorisch, player2 und 3 fakultativ. Die Werte entsprechen der Punkte, also player1=0 heisst, der Spieler1 hat 0 Punkte.
 * game.html?aufgabe=0&player1=0&mode=0  > Aufgabe mit index 0 aus json, player1 hat 0 Punkte, Modus=0 (kooperativ)
