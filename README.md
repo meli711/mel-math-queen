@@ -18,8 +18,9 @@ In Project root (where the package.json is) open a terminal:
 * player2 plays with the keyboard: w=>answer top left,e=>answer top right,s=>answer bottom left,d=>answer bottom right 
 * player3 plays with the keyboard: i=>answer top left,o=>answer top right,k=>answer bottom left,l=>answer bottom right 
 * cooperativ: the points from every player count together
-* fight: every player has it's own points and there may be a winner at the end.
+* fight: every player has its own points and there may be a winner at the end.
 * To test the software, enter in terminal:  npm run test
+
 Game:
 Architektur:
 * Programiersprache: Typescript, weil einfach (einfacher als Javascript) und ideal für Web und somit auf fast allen Geräten spielbar.
