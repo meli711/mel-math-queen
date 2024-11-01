@@ -1,4 +1,4 @@
-import {Cooperative, Fight, MathQueenGame} from "../app/game";
+import {CooperativeQueen, FightQueen, MathQueenGame} from "../app/game";
 import {delay} from "../app/app";
 
 test("delay should pause execution for specified milliseconds", async () => {

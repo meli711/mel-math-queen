@@ -1,15 +1,15 @@
-import {Cooperative, Fight, MathQueenGame} from "../app/game";
+import {CooperativeQueen, FightQueen, MathQueenGame} from "../app/game";
 import * as aufgaben from '../jsons/aufgaben.json';
 
 describe("Cooperative Game Tests", () => {
-    let cooperativeGame: Cooperative;
+    let cooperativeGame: CooperativeQueen;
 
     beforeEach(() => {
-        cooperativeGame = new Cooperative(0, 0, 5, undefined, undefined);
+        cooperativeGame = new CooperativeQueen(0, 0, 5, undefined, undefined);
     });
 
     test("should initialize with correct aufgabe item or default", () => {
-        const defaultGame = new Cooperative(1000, 0, 0, undefined, undefined); // Invalid aufgabeParam
+        const defaultGame = new CooperativeQueen(1000, 0, 0, undefined, undefined); // Invalid aufgabeParam
         expect(cooperativeGame.aufgabeItem.value).toBe(0);
         expect(defaultGame.aufgabeItem.value).toBe(aufgaben[MathQueenGame.PLAYER1].value);
     });
@@ -32,20 +32,20 @@ describe("Cooperative Game Tests", () => {
     test("should handle task completion check correctly", () => {
         expect(cooperativeGame.hatNochAufgaben()).toBe(true);
 
-        const completedGame = new Cooperative(9, 0, 5, undefined, undefined);
+        const completedGame = new CooperativeQueen(9, 0, 5, undefined, undefined);
         expect(completedGame.hatNochAufgaben()).toBe(false);
     });
 });
 
 describe("Fight Game Tests", () => {
-    let fightGame: Fight;
+    let fightGame: FightQueen;
 
     beforeEach(() => {
-        fightGame = new Fight(10, 1, 3, 2, 1);
+        fightGame = new FightQueen(10, 1, 3, 2, 1);
     });
 
     test("should initialize with correct aufgabe item or default", () => {
-        const defaultGame = new Fight(1000, 1, 0, 0, 0); // Invalid aufgabeParam
+        const defaultGame = new FightQueen(1000, 1, 0, 0, 0); // Invalid aufgabeParam
         expect(fightGame.aufgabeItem.value).toBe(10);
         expect(defaultGame.aufgabeItem.value).toBe(0);
     });
@@ -82,11 +82,11 @@ describe("Fight Game Tests", () => {
     test("should handle task completion check correctly", () => {
         expect(fightGame.hatNochAufgaben()).toBe(true);
 
-        const completedGame = new Fight(19, 1, 3, 2, 1);
+        const completedGame = new FightQueen(19, 1, 3, 2, 1);
         expect(completedGame.hatNochAufgaben()).toBe(false);
     });
     test("should handle active player correctly", () => {
-        const defaultGame = new Fight(1000, 1, 0, undefined, undefined); // Invalid aufgabeParam
+        const defaultGame = new FightQueen(1000, 1, 0, undefined, undefined); // Invalid aufgabeParam
         expect(defaultGame.isPlayerActive(MathQueenGame.PLAYER1)).toBe(true);
         expect(defaultGame.isPlayerActive(MathQueenGame.PLAYER2)).toBe(false);
         expect(defaultGame.isPlayerActive(MathQueenGame.PLAYER3)).toBe(false);

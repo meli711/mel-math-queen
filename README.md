@@ -81,6 +81,80 @@ graph TD
     O --> P
     P --> Q[End Game]
 ```
+Sequence Diagram:
+```mermaid
+sequenceDiagram
+    participant User
+    participant index.html
+    participant game.html
+    participant app.ts
+    participant game.ts
+
+    User->>index.html: onLoad()
+    index.html->>app.ts: initializeGame()
+    app.ts->>game.html: loadGamePage()
+    game.html->>app.ts: setupGame()
+    app.ts->>game.ts: initializeGameLogic()
+
+    User->>game.html: onLoesungClick()
+    game.html->>app.ts: handleAnswerClick()
+    app.ts->>game.ts: processAnswer()
+    game.ts->>app.ts: updateGameState()
+    app.ts->>game.html: updateUI()
+```
+Class Diagram:
+```mermaid
+classDiagram
+    class MathQueenGame {
+        <<abstract>>
+        - playerLock: boolean
+        - _aufgabeNumber: number
+        - _modeNumber: number
+        - _aufgabeItem: AufgabeItem
+        - _player1Score: number
+        - _player2Score: number
+        - _player3Score: number
+        + MathQueenGame(aufgabeParam, modeParam, player1Param, player2Param, player3Param)
+        + get modeNumber(): number
+        + get aufgabeNumber(): number
+        + get aufgabeItem(): AufgabeItem
+        + isTwoPlayerGame(): boolean
+        + isThreePlayerGame(): boolean
+        + isMultiplayerGame(): boolean
+        + onPlayerInput(input: number, player: number): string
+        + isPlayerActive(player: number): boolean
+        + hatNochAufgaben(): boolean
+        # abstract winPoint(player: number): void
+        # abstract loosePoint(player: number): void
+        # abstract getPoints(player: number): number
+        # abstract getPointsMessage(player: number): string
+        # abstract isWinner(player: number): boolean
+   }
+
+    class CooperativeQueen {
+        - playerScore: number
+        + CooperativeQueen(aufgabeParam, modeParam, player1Param, player2Param, player3Param)
+        + loosePoint(player: number): void
+        + winPoint(player: number): void
+        + getPoints(player: number): number
+        + getPointsMessage(player: number): string
+        + isWinner(player: number): boolean
+    }
+
+    class FightQueen {
+        - playerScore: number[]
+        + FightQueen(aufgabeParam, modeParam, player1Param, player2Param, player3Param)
+        + loosePoint(player: number): void
+        + winPoint(player: number): void
+        + getPoints(player: number): number
+        + getPointsMessage(player: number): string
+        + isWinner(player: number): boolean
+    }
+
+    MathQueenGame <|-- CooperativeQueen
+    MathQueenGame <|-- FightQueen
+```
+
 
 Beispiele:
 * index.html, in einem Formular werden die Parameter ausgewählt. Parameter sind: player1, player2,player3, modus(0=kooperativ, 1=fight), und die Aufgabennummer (Quiz1=0,Quiz2=10,Quiz3=20,Quiz4=30). Ein Quiz beinhaltet 10 Fragen. player1 ist obligatorisch, player2 und 3 fakultativ. Die Werte entsprechen der Punkte, also player1=0 heisst, der Spieler1 hat 0 Punkte.

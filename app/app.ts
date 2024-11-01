@@ -1,4 +1,4 @@
-import {MathQueenGame, Cooperative, Fight} from "./game";
+import {MathQueenGame, CooperativeQueen, FightQueen} from "./game";
 
 const TOP_LEFT = 0;
 const TOP_RIGHT = 1;
@@ -195,8 +195,8 @@ export function initGame() {
     const player2 = player2Param ? +player2Param : undefined;
     const player3 = player3Param ? +player3Param : undefined;
     game = (mode === MODE_KOOPERARTIV
-        ? new Cooperative(aufgabe, mode, player1, player2, player3)
-        : new Fight(aufgabe, mode, player1, player2, player3));
+        ? new CooperativeQueen(aufgabe, mode, player1, player2, player3)
+        : new FightQueen(aufgabe, mode, player1, player2, player3));
 
     display();
 }

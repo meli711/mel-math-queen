@@ -132,7 +132,7 @@ export abstract class MathQueenGame {
 
 }
 
-export class Cooperative extends MathQueenGame {
+export class CooperativeQueen extends MathQueenGame {
 
     private playerScore: number
 
@@ -166,7 +166,7 @@ export class Cooperative extends MathQueenGame {
     }
 }
 
-export class Fight extends MathQueenGame {
+export class FightQueen extends MathQueenGame {
     private playerScore: number[] = [];
 
     constructor(aufgabeParam, modeParam, player1Param, player2Param, player3Param) {
